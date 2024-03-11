@@ -17,8 +17,8 @@ public class MinHeap {
     private void resizeHeap() {
         if(capacity == top) {
             data = Arrays.copyOf(data, capacity * 2);
+            capacity *= 2;
         }
-        capacity *= 2;
     }
 
     private void swap(int indexOne, int indexTwo) {
@@ -43,7 +43,7 @@ public class MinHeap {
     //parent must be >= top bc/ they have to be greater than 0
     //left child nodes are < top because they need parent nodes for existence
     private boolean hasParent(int index) {
-        return getParentIndex(index) >= top;
+        return index > 0;
     }
 
     private boolean hasLeftChild(int index) {
@@ -114,7 +114,7 @@ public class MinHeap {
         }
     }
 
-    //"bubbling down"
+    //"bubbling down", this is the iterative version of heapifyDown
     private void heapifyDown() {
 
         int index = 0; //parent root, element at the very top of heap
@@ -149,7 +149,7 @@ public class MinHeap {
     }
 
     // display heap in visually appealing tree format
-    public void printHeap() {
+    public void printMinHeap() {
         // Calculate depth of the heap (how many levels contain nodes)
         int depth = (int) (Math.log(top) / Math.log(2)) + 1;
 
