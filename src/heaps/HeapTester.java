@@ -3,16 +3,40 @@ package heaps;
 public class HeapTester {
     public static void main(String[] args) {
 
-        MinHeap heap = new MinHeap();
+        MinHeap minHeap = new MinHeap();
 
-        heap.add(1);
-        heap.add(2);
-        heap.add(3);
-        heap.add(4);
-        heap.add(5);
+        minHeap.add(1);
+        minHeap.add(2);
+        minHeap.add(3);
+        minHeap.add(4);
+        minHeap.add(5);
+        minHeap.poll();
+        minHeap.printMinHeap();
 
-        heap.poll();
+        /*
+                        2
+                  4            3
+               5
+         */
 
-        heap.printHeap();
+        System.out.println();
+
+        MaxHeap maxHeap = new MaxHeap();
+
+        maxHeap.add(1);
+        maxHeap.add(2);
+        maxHeap.add(3);
+        maxHeap.add(4);
+        maxHeap.add(5);
+        maxHeap.poll();
+        maxHeap.printMaxHeap();
+
+        
+        /*
+                        4
+                  3            2
+               1
+         */
+
     }
 }
