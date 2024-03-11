@@ -21,12 +21,9 @@ programming assignment.*/
 public class TesterTF {
     public static void main(String[] args) {
 
-        System.out.println("ENTER NUMBER OF QUESTIONS: ");
         int n = Integer.parseInt(args[0]);
-
-        System.out.println();
-        System.out.println();
-
+        System.out.println("NUMBER OF QUESTIONS: " + n);
+        
         System.out.println("ITERATIVE VERSION");
         TrueFalseOutcomes.iterativeVersion(n);
 
