@@ -33,11 +33,11 @@ public class ContainsDuplicate {
         /*
         RESULTS:
 
-        Execution time for array of size: 50 is 1.59E-5 milliseconds
-        Execution time for array of size: 100 is 1.31E-4 milliseconds
-        Execution time for array of size: 1000 is 0.0059303 milliseconds
-        Execution time for array of size: 5000 is 0.012146 milliseconds
-        Execution time for array of size: 10000 is 0.0140614 milliseconds
+        Execution time for array of size: 50 is 0.0146 milliseconds
+        Execution time for array of size: 100 is 0.0628 milliseconds
+        Execution time for array of size: 1000 is 3.8404 milliseconds
+        Execution time for array of size: 5000 is 8.6366 milliseconds
+        Execution time for array of size: 10000 is 17.7717 milliseconds
         */
 
     }
@@ -75,6 +75,6 @@ public class ContainsDuplicate {
 
     // converts nanoseconds to milliseconds
     private static double nanoToMilli(double nano) {
-        return nano / 1000000000;
+        return nano / 1000000;
     }
 }
