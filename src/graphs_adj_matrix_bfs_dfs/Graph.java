@@ -2,6 +2,14 @@ package graphs_adj_matrix_bfs_dfs;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Random;
+
+/*
+    Devin Diaz,     3 / 20 / 2024
+
+    Graph Class with BFS method
+*/
+
 
 public class Graph {
 
@@ -67,6 +75,26 @@ public class Graph {
 
     public boolean checkEdge(int src, int dst) {
         return matrix[src][dst] == 1;
+    }
+
+    public void randomlyPopulateGraph(int numberOfEdges) {
+        Random random = new Random();
+        int size = nodes.size();
+
+        for (int i = 0; i < numberOfEdges; i++) {
+            int src = random.nextInt(size);
+            int dst = random.nextInt(size);
+
+            // To avoid self-loops, check if src is not equal to dst.
+            // If you don't mind self-loops, you can remove this condition.
+            if (src != dst) {
+                addEdge(src, dst);
+            } else {
+                // Decrement i to ensure the desired number of edges is added.
+                // This is because this iteration did not add any edge.
+                i--;
+            }
+        }
     }
 
     public void print() {
